@@ -5,13 +5,13 @@
             <form class="form" [formGroup]="signIn">
             <div class="form-group">
                 <label class="form-label text-white">Email:-</label> <br>
-                <input type="email" name="email" formControlName="email" #email placeholder="enter your email" id=""><br>
+                <input type="email" name="email" class="form-control"formControlName="email" #email placeholder="enter your email" id=""><br>
                 <span class="text-danger" *ngIf="signIn.get('email')?.invalid && signIn.get('email')?.touched">Enter Valid Email</span>
             </div>
             <br>
             <div class="form-group">
                 <label class="form-label text-white">Password:-</label> <br>
-                <input type="password" name="pwd" formControlName="pwd" placeholder="enter your Password" id=""><br>
+                <input type="password" name="pwd" formControlName="pwd" class="form-control" placeholder="enter your Password" id=""><br>
                 <span class="text-danger" *ngIf="signIn.get('pwd')?.invalid && signIn.get('pwd')?.touched">Password Should Be Strong</span>
             </div>
             <br>

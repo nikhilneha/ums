@@ -1,11 +1,11 @@
 <div class="container-fluid">
-    <div class="row justify-content-center m-5">
-        <div class="col-md-4 bg-dark">
+    <div class="row justify-content-center">
+        <div class="col-md-4 bg-dark m-5">
             <h2 class="text-center text-white">Forgot Password</h2>
             <form class="form" [formGroup]="forgotPass">
                 <div class="form-group">
-                    <label class="form-group text-white">Email:-</label> <br>
-                    <input type="emailId" name="emailId" formControlName="emailId"  id=""><br>
+                    <label class="form-group text-white form-label">Email:-</label> <br>
+                    <input type="emailId" name="emailId" class="form-control" formControlName="emailId"  id=""><br>
                     <span class="text-danger" *ngIf="forgotPass.get('emailId')?.invalid && forgotPass.get('emailId')?.touched;">Enter Valid Email</span>
                 </div>
                 <button class="btn btn-primary m-2" (click)="forgotPswd()">Submit</button>
