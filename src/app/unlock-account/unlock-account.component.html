@@ -5,22 +5,22 @@
     <form [formGroup]="unlockAcc">
         <div class="form-group">
             <label class="form-label text-white">Email Id:-</label><br>
-            <input type="email" name="email" formControlName="email" #email placeholder="Enter your Email" id=""><br>
+            <input type="email" name="email" class="form-control" formControlName="email" #email placeholder="Enter your Email" id=""><br>
             <span class="text-danger" *ngIf="!unlockAcc.get('email')?.valid && unlockAcc.get('email')?.touched">Enter Valid Email</span>
         </div>
         <div class="form-group">
             <label class="form-label text-white">Temporory Pwd:-</label><br>
-            <input type="password" name="tempPwd" formControlName="tempPwd" id=""><br>
+            <input type="password" name="tempPwd" class="form-control" formControlName="tempPwd" id=""><br>
             <span class="text-danger" *ngIf="unlockAcc.get('tempPwd')?.invalid && unlockAcc.get('tempPwd')?.touched">Incorrect Password</span>
         </div>
         <div class="form-group">
             <label class="form-label text-white">Choose New Pwd:-</label><br>
-            <input type="password" name="newPwd"  formControlName="newPwd" id=""><br>
+            <input type="password" name="newPwd" class="form-control" formControlName="newPwd" id=""><br>
             <span class="text-danger" *ngIf="unlockAcc.get('newPwd')?.invalid && unlockAcc.get('newPwd')?.touched">Password Should be Strong</span>
         </div>
         <div class="form-group">
             <label class="form-label text-white">Confirm Pwd:-</label><br>
-            <input type="password" name="confirmPwd" formControlName="confirmPwd" id=""><br>
+            <input type="password" name="confirmPwd" class="form-control" formControlName="confirmPwd" id=""><br>
             <span class="text-danger" *ngIf="unlockAcc.get('confirmPwd')?.invalid && unlockAcc.get('confirmPwd')?.touched">Password Not Matched</span>
         </div>
         <br>
