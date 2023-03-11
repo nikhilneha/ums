@@ -8,6 +8,7 @@
             <input type="email" name="email" class="form-control" formControlName="email" #email placeholder="Enter your Email" id=""><br>
             <span class="text-danger" *ngIf="!unlockAcc.get('email')?.valid && unlockAcc.get('email')?.touched">Enter Valid Email</span>
         </div>
+        
         <div class="form-group">
             <label class="form-label text-white">Temporory Pwd:-</label><br>
             <input type="password" name="tempPwd" class="form-control" formControlName="tempPwd" id=""><br>
