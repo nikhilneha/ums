@@ -1,0 +1,26 @@
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-md-3 bg-dark m-5">
+            <a href="" class="text-white">Sign In Here</a><br><br>
+            <form class="form" [formGroup]="signIn">
+            <div class="form-group">
+                <label class="form-label text-white">Email:-</label> <br>
+                <input type="email" name="email" formControlName="email" #email placeholder="enter your email" id=""><br>
+                <span class="text-danger" *ngIf="signIn.get('email')?.invalid && signIn.get('email')?.touched">Enter Valid Email</span>
+            </div>
+            <br>
+            <div class="form-group">
+                <label class="form-label text-white">Password:-</label> <br>
+                <input type="password" name="pwd" formControlName="pwd" placeholder="enter your Password" id=""><br>
+                <span class="text-danger" *ngIf="signIn.get('pwd')?.invalid && signIn.get('pwd')?.touched">Password Should Be Strong</span>
+            </div>
+            <br>
+            <button class="btn btn-primary" [routerLink]="['/logout/']" (click)="saveData()">Sign-In</button> <br><br>
+             <a [routerLink]="['/register/']" class="text-white m-3">Register</a>
+             <a [routerLink]="['/home/']" class="text-white m-5">Forgot Password</a>
+            </form>
+
+            
+        </div>
+    </div>
+</div>

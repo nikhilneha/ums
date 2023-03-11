@@ -1,0 +1,68 @@
+<div class="container-fluid">
+    <div class="row justify-content-center bg-dark m-5">
+        <form [formGroup]="registerUser">
+            <h2 class="text-center text-white">Registration Form</h2> <br><br>
+
+            <div class="col-md-4 bg-dark m-3">
+              <div class="form-group">
+                <label class="form-label text-white">First Name:-</label><br>
+                <input type="text" name="fname" formControlName="fname" placeholder="Enter Your First Name" id=""><br>
+                <span class="text-danger" *ngIf="registerUser.get('fname')?.invalid && registerUser.get('fname')?.touched">Enter Valid First Name</span>
+               </div>
+               <div class="form-group">
+                <label class="form-label text-white">Last Namw:-</label><br>
+                <input type="text" name="lname" formControlName="lname" placeholder="Enter Your Last Name" id=""><br>
+                <span class="text-danger" *ngIf="registerUser.get('lname')?.invalid && registerUser.get('lname')?.touched">Enter Valid Last Name</span>
+               </div>
+              <div class="form-group">
+                <label class="form-label text-white">Email:-</label><br>
+                <input type="email" name="email" formControlName="email" #email placeholder="Enter Your email" id="" (blur)="checkEmail($any($event.target).value)"><br>
+                <span class="text-danger" *ngIf="registerUser.get('email')?.invalid && registerUser.get('email')?.touched">Enter Valid Email</span>
+                                
+               </div>
+               <div class="form-group">
+                <label class="form-label text-white">Mobile No.:-</label> <br>
+                <input type="number" name="phno" formControlName="phno" placeholder="Enter Your Mobile Number" id=""><br>
+                <span class="text-danger" *ngIf="registerUser.get('phno')?.invalid && registerUser.get('phno')?.touched">Mobile Number Is Not Valid</span>
+               </div>
+               <div class="form-group">
+                <label class="form-label text-white">DOB:-</label><br>
+                <input type="date" name="dob" formControlName="dob"  id="">
+               </div>
+               <div class="form-group">
+                <label class="form-label text-white">Country:-</label><br>
+                <select class="form-select" name="countryId" formControlName="countryId" (change)="getStates($any($event.target).value)">
+                    <option *ngFor="let c of countries|keyvalue"   [value]="c.key">{{c.value}}</option>
+                
+                  </select>
+               </div>
+                  <div class="form-group">
+                    <label class="form-label text-white">State:-</label><br>
+                    <select class="form-select" name="stateId" formControlName="stateId" (change)="getAllCities($any($event.target).value)">
+                        <option *ngFor="let s of states|keyvalue" [value]="s.key">{{s.value}}</option>
+
+                      </select>
+                   </div>
+                   
+                   <div class="form-group">
+                <label class="form-label text-white">City:-</label><br>
+                <select class="form-select" name="cityId" formControlName="cityId" >
+                    <option *ngFor="let ci of cities|keyvalue" [value]="ci.key">{{ci.value}}</option>
+                  
+                  </select>
+               </div>
+                  <div class="form-group">
+                <label class="form-label text-white">Gender:-</label><br>
+                <select name="form-select" name="gender" formControlName="gender" id="">
+                  <option value="1">Male</option>
+                  <option value="2">Female</option>
+                </select>
+               </div>
+               
+            </div>
+               <button class="btn btn-danger m-3">Reset</button>
+               <button class="btn btn-secondary m-3" (click)="saveUser()">Register</button>
+            </form>
+        </div>
+        
+    </div>

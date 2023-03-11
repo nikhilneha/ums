@@ -1,0 +1,15 @@
+.b
+{
+    display: flex;
+    justify-content: flex-end;
+    color: red;
+    font-size: 25px;
+}
+.row{
+    margin-top: 1rem;
+}
+input.ng-invalid.ng-touched
+{
+    border: 1px solid red;
+    box-shadow: 0 0 13px inset red;
+}

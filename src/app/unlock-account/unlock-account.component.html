@@ -1,0 +1,31 @@
+<div class="container-fluid">
+    <div class="row justify-content-center m-5">
+        <div class="col-md-4 bg-dark">
+    <h2 class="text-center text-white ">Unlock Account</h2>
+    <form [formGroup]="unlockAcc">
+        <div class="form-group">
+            <label class="form-label text-white">Email Id:-</label><br>
+            <input type="email" name="email" formControlName="email" #email placeholder="Enter your Email" id=""><br>
+            <span class="text-danger" *ngIf="!unlockAcc.get('email')?.valid && unlockAcc.get('email')?.touched">Enter Valid Email</span>
+        </div>
+        <div class="form-group">
+            <label class="form-label text-white">Temporory Pwd:-</label><br>
+            <input type="password" name="tempPwd" formControlName="tempPwd" id=""><br>
+            <span class="text-danger" *ngIf="unlockAcc.get('tempPwd')?.invalid && unlockAcc.get('tempPwd')?.touched">Incorrect Password</span>
+        </div>
+        <div class="form-group">
+            <label class="form-label text-white">Choose New Pwd:-</label><br>
+            <input type="password" name="newPwd"  formControlName="newPwd" id=""><br>
+            <span class="text-danger" *ngIf="unlockAcc.get('newPwd')?.invalid && unlockAcc.get('newPwd')?.touched">Password Should be Strong</span>
+        </div>
+        <div class="form-group">
+            <label class="form-label text-white">Confirm Pwd:-</label><br>
+            <input type="password" name="confirmPwd" formControlName="confirmPwd" id=""><br>
+            <span class="text-danger" *ngIf="unlockAcc.get('confirmPwd')?.invalid && unlockAcc.get('confirmPwd')?.touched">Password Not Matched</span>
+        </div>
+        <br>
+        <button class="btn btn-info" (click)="unlockAct()" [routerLink]="['/login/']">Submit</button>
+    </form>
+        </div>
+    </div>
+</div>
